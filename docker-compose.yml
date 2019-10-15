@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./docker/web
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data/files/static:/data/files/static:rw
+      - ./data/files/logs:/data/files/logs:rw
+    env_file: ./.env
