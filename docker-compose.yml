@@ -8,6 +8,19 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./data/files/static:/data/files/static:rw
-      - ./data/files/logs:/data/files/logs:rw
+      - ./data/files/static:/data/files/static
+      - ./data/files/logs:/data/files/logs
+    env_file: ./.env
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    expose:
+      - "9000"
+    volumes:
+      - ./data/files/static:/data/files/static
+    restart: always
     env_file: ./.env
