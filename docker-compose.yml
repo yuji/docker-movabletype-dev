@@ -40,3 +40,8 @@ services:
       - ./docker/db/conf:/etc/mysql/conf.d
       - ./data/db:/var/lib/mysql
     env_file: ./.env
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - '8081:1080'
