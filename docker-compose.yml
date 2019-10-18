@@ -6,10 +6,11 @@ services:
       context: ./docker/web
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - 8080:80
     volumes:
       - ./data/files/static:/data/files/static
       - ./data/files/logs:/data/files/logs
+    restart: always
     env_file: ./.env
     depends_on:
       - php
@@ -19,8 +20,23 @@ services:
       context: ./docker/php
       dockerfile: Dockerfile
     expose:
-      - "9000"
+      - 9000
     volumes:
       - ./data/files/static:/data/files/static
     restart: always
+    env_file: ./.env
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssw0rd
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: p@ssw0rd
+      MYSQL_DATABASE: mt
+    ports:
+      - 13306:3306
+    volumes:
+      - ./docker/db/conf:/etc/mysql/conf.d
+      - ./data/db:/var/lib/mysql
     env_file: ./.env
