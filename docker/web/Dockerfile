@@ -1,7 +1,7 @@
 FROM centos:8
 
-RUN yum update -y
-RUN yum -y install httpd
+RUN dnf update -y
+RUN dnf -y install httpd
 
 COPY 000-default.conf /etc/httpd/conf.d/000-default.conf
 
