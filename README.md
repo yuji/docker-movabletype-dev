@@ -2,7 +2,7 @@
 This development kit support you to getting started creating a plugin and theme for  Movable Type.
 
 ***!!! IMPORTANT !!!***  
-**DO NOT USE THIS DEVELOPMENT KIT FOR PRODUCTION USES.**
+**DO NOT USE THIS DEVELOPMENT KIT AS A PRODUCTION.**
 
 
 ## Requirements
