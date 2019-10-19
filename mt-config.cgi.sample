@@ -1,0 +1,18 @@
+CGIPath        /mt/
+StaticWebPath  /mt-static
+StaticFilePath /data/files/mt-static
+BaseSitePath   /data/files/static
+
+ObjectDriver DBI::mysql
+Database mt
+DBUser admin
+DBPassword p@ssw0rd
+DBHost db
+
+MailTransfer smtp
+SMTPServer mailcatcher
+SMTPPort 1025
+
+DefaultLanguage ja
+
+PIDFilePath /var/run/mt.pid

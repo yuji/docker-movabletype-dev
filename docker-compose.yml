@@ -10,10 +10,11 @@ services:
     volumes:
       - ./data/files/static:/data/files/static
       - ./data/files/logs:/data/files/logs
-    restart: always
+      - ./app/mt/mt-static:/data/files/mt-static
     env_file: ./.env
     depends_on:
       - php
+      - mt
 
   php:
     build:
@@ -44,4 +45,19 @@ services:
   mailcatcher:
     image: schickling/mailcatcher
     ports:
-      - '8081:1080'
+      - 8081:1080
+
+  mt:
+    build:
+      context: ./docker/mt
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/files/static:/data/files/static
+      - ./data/files/logs:/data/files/logs
+      - ./app/mt:/app/mt
+    depends_on:
+      - db
+    env_file: .env
+    ports:
+      - 5000:5000
+
