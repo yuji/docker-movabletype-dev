@@ -1,5 +1,5 @@
 app/mt/*
-data/files/db/*
+data/db/*
 data/files/logs/*
 data/files/static/*
 !**/.gitkeep
