@@ -2,7 +2,7 @@
 This development kit support you to getting started creating a plugin and theme for  Movable Type.
 
 ***!!! IMPORTANT !!!***  
-DO NOT USE THIS DEVELOPMENT KIT FOR PRODUCTION USES.
+**DO NOT USE THIS DEVELOPMENT KIT FOR PRODUCTION USES.**
 
 
 ## Requirements
@@ -13,7 +13,7 @@ DO NOT USE THIS DEVELOPMENT KIT FOR PRODUCTION USES.
 ## Set up and build
 
 ```
-git clone git@github.com:yuji/mt-dev.git any-project-name
+git clone git@github.com:yuji/docker-movabletype-dev.git
 cd any-project-name/app/mt
 unzip MT7-FILE.zip
 cp ../../mt-config.cgi.sample mt-config.cgi
