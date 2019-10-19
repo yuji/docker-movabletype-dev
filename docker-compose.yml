@@ -54,6 +54,7 @@ services:
     volumes:
       - ./data/files/static:/data/files/static
       - ./data/files/logs:/data/files/logs
+      - ./app/mt/mt-static:/data/files/mt-static
       - ./app/mt:/app/mt
     depends_on:
       - db
